@@ -257,7 +257,7 @@ d3 = require("d3@5", "d3-tile@1")*/
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
 <!-- Create an element where the map will take place -->
-<svg id="my_dataviz" width="400" height="300"></svg>
+<svg id="my_dataviz" width="800" height="500"></svg>
 <script>
 
 // The svg
@@ -315,6 +315,7 @@ function ready(error, topo) {
     .data(topo.features)
     .enter()
     .append("path")
+    .attr("id", function(d){return d.properties["name"]})
       // draw each country
       .attr("d", d3.geoPath()
         .projection(projection)
