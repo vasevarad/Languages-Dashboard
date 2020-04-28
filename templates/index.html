@@ -250,14 +250,16 @@ d3 = require("d3@5", "d3-tile@1")*/
 
 <!DOCTYPE html>
 <meta charset="utf-8">
-
+<head>
+<h1> Languages Dashboard</h1>
+</head>
 <!-- Load d3.js -->
 <script src="http://d3js.org/d3.v4.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
 <!-- Create an element where the map will take place -->
-<svg id="my_dataviz" width="800" height="500"></svg>
+<svg id="my_dataviz" width="650" height="300"></svg>
 <script>
 
 // The svg
@@ -267,8 +269,8 @@ var svg = d3.select("svg"),
 
 // Map and projection
 var path = d3.geoPath();
-var projection = d3.geoMercator()
-  .scale(70)
+var projection = d3.geoEquirectangular()
+  .scale(100)
   .center([0,20])
   .translate([width / 2, height / 2]);
 
@@ -306,9 +308,14 @@ function ready(error, topo) {
     d3.select(this)
       .transition()
       .duration(200)
-      .style("stroke", "transparent")
+      .style("stroke", "")
   }
 
+  let mouseClick = function(d){
+    var country = d3.select(this).attr("id")
+    console.log(country)
+
+  }  
   // Draw the map
   svg.append("g")
     .selectAll("path")
@@ -330,6 +337,7 @@ function ready(error, topo) {
       .style("opacity", .8)
       .on("mouseover", mouseOver )
       .on("mouseleave", mouseLeave )
+      .on("click", mouseClick)
     }
 
 </script>
