@@ -1,0 +1,2425 @@
+{
+   "name":"Families",
+   "children":[
+      {
+         "name":"Huarpean",
+         "children":[
+            {
+               "name":"Allentiac [a",
+               "value":"1"
+            },
+            {
+               "name":"Millcayac [m",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Hurro-Urartian",
+         "children":[
+            {
+               "name":"Hurrian [hurr12",
+               "value":"1"
+            },
+            {
+               "name":"Urartian [urar12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Inanwatan",
+         "children":[
+            {
+               "name":"Duriankere [duri12",
+               "value":"1"
+            },
+            {
+               "name":"Suabo [suab12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Jarawa-Onge",
+         "children":[
+            {
+               "name":"Jarawa {India} [jara12",
+               "value":"1"
+            },
+            {
+               "name":"nge [onge12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Jicaquean",
+         "children":[
+            {
+               "name":"Tol [toll12",
+               "value":"1"
+            },
+            {
+               "name":"Western Jicaque [w",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Kakua-Nukak",
+         "children":[
+            {
+               "name":"Kakua [cacu12",
+               "children":[
+                  {
+                     "name":"Mac-Paran Cacua",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Vaups Cacua",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Nukak Mak [nuka12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Katukinan",
+         "children":[
+            {
+               "name":"Katawixi [kata12",
+               "value":"1"
+            },
+            {
+               "name":"Katukna-Kanamar [kana12",
+               "children":[
+                  {
+                     "name":"Kanamar do Juru-Japur-Xeru-Itaqua-Juta",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Katukna do Bi-Ipixuna",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Tshom-Djapa",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Keresan",
+         "children":[
+            {
+               "name":"Eastern Keres [east14",
+               "children":[
+                  {
+                     "name":"Cochiti",
+                     "value":"1"
+                  },
+                  {
+                     "name":"San Felipe",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Santa Ana",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Santo Domingo",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Zia {United States}",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Western Keres [west26",
+               "children":[
+                  {
+                     "name":"Acoma",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Konda-Yahadian",
+         "children":[
+            {
+               "name":"Yaben {Konda} [kond13",
+               "value":"1"
+            },
+            {
+               "name":"Yahadian [yaha12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Koreanic",
+         "children":[
+            {
+               "name":"Jejueo [jeju12",
+               "value":"1"
+            },
+            {
+               "name":"Korean [kore12",
+               "children":[
+                  {
+                     "name":"Ch''ungch''ongdo",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Hamgyongdo",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Hwanghaedo",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Jollado",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Kyongsangdo",
+                     "value":"1"
+                  },
+                  {
+                     "name":"P''yong''ando",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Seoul",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Kresh-Aja",
+         "children":[
+            {
+               "name":"Aja {Sudan} [ajas12",
+               "value":"1"
+            },
+            {
+               "name":"Gbaya {Sudan} [gbay12",
+               "children":[
+                  {
+                     "name":"Dongo {Sudan}",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Gbaya-Dara",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Gbaya-Gboko",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Gbaya-Ndogo",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Gbaya-Ngbongbo",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Naka",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Orlo",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Woro {Sudan}",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Kwomtari-Nai",
+         "children":[
+            {
+               "name":"Kwomtari [nucl15",
+               "children":[
+                  {
+                     "name":"Ekos-Yenabi-Maragin",
+                     "value":"1"
+                  },
+                  {
+                     "name":"West Central Kwomtari",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Nai [naii12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Lencan",
+         "children":[
+            {
+               "name":"Lenca-Honduras [l",
+               "value":"1"
+            },
+            {
+               "name":"Lenca-Salvador [l",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Limilngan-Wulna",
+         "children":[
+            {
+               "name":"Limilngan [nucl13",
+               "value":"1"
+            },
+            {
+               "name":"Wulna [wuln12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Manubaran",
+         "children":[
+            {
+               "name":"Doromu-Koki [doro12",
+               "children":[
+                  {
+                     "name":"Koki",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Kokila",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Koriko",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Maria {Papua New Guinea} [mari14",
+               "children":[
+                  {
+                     "name":"Amota",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Didigaru",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Gebi",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Imila",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Maria",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Oibu",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Uderi",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Marrku-Wurrugu",
+         "children":[
+            {
+               "name":"Margu [marg12",
+               "value":"1"
+            },
+            {
+               "name":"Wurrugu [wurr12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Mombum-Koneraw",
+         "children":[
+            {
+               "name":"Koneraw [kone12",
+               "value":"1"
+            },
+            {
+               "name":"Mombum [nucl14",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Namla-Tofanma",
+         "children":[
+            {
+               "name":"Namla [naml12",
+               "value":"1"
+            },
+            {
+               "name":"Tofanma [tofa12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Nivkh",
+         "children":[
+            {
+               "name":"Amur Nivkh [gily12",
+               "children":[
+                  {
+                     "name":"Amur-West Sakhalin Nivkh",
+                     "value":"1"
+                  },
+                  {
+                     "name":"North Sakhalin Nivkh",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Sakhalin Nivkh [s",
+               "children":[
+                  {
+                     "name":"East Sakhalin Nivkh",
+                     "value":"1"
+                  },
+                  {
+                     "name":"South Sakhalin Nivkh",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"North-Eastern Tasmanian",
+         "children":[
+            {
+               "name":"Ben-Lomond-Cape-Portland [b",
+               "value":"1"
+            },
+            {
+               "name":"NE Tasmanian Dialect Chain [n",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Northern Daly",
+         "children":[
+            {
+               "name":"Mullukmulluk [mull12",
+               "value":"1"
+            },
+            {
+               "name":"Tyaraity [tyar12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Nyimang",
+         "children":[
+            {
+               "name":"Afitti [afit12",
+               "value":"1"
+            },
+            {
+               "name":"Ama {Sudan} [amas12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Otomaco-Taparita",
+         "children":[
+            {
+               "name":"Otomaco [o",
+               "value":"1"
+            },
+            {
+               "name":"Taparita [t",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Pahoturi",
+         "children":[
+            {
+               "name":"Agob-Ende-Kawam [agob12",
+               "children":[
+                  {
+                     "name":"Agb",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Ende {Papua New Guinea}",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Kawam",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Idi-Taeme [idii12",
+               "children":[
+                  {
+                     "name":"Idi",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Taeme",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Palaihnihan",
+         "children":[
+            {
+               "name":"Achumawi [achu12",
+               "value":"1"
+            },
+            {
+               "name":"Atsugewi [atsu12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Piawi",
+         "children":[
+            {
+               "name":"Haruai [haru12",
+               "children":[
+                  {
+                     "name":"Central Waibuk",
+                     "value":"1"
+                  },
+                  {
+                     "name":"North Waibuk",
+                     "value":"1"
+                  },
+                  {
+                     "name":"South Waibuk",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Pinai-Hagahai [pina12",
+               "children":[
+                  {
+                     "name":"Luya-Ginam-Mamusi",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Pinai",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Puri-Coroado",
+         "children":[
+            {
+               "name":"Coroado-Puri [c",
+               "value":"1"
+            },
+            {
+               "name":"Puri [puri12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Rashad",
+         "children":[
+            {
+               "name":"Tagoi [tago12",
+               "children":[
+                  {
+                     "name":"Goy",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Moreb",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Orig",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Tumale",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Tegali [tega12",
+               "children":[
+                  {
+                     "name":"Nuclear Tegali",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Rashad Town-Hills",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Senagi",
+         "children":[
+            {
+               "name":"Angor [ango12",
+               "children":[
+                  {
+                     "name":"Nai {Angor}",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Samanai",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Dera {Indonesia} [dera12",
+               "children":[
+                  {
+                     "name":"Duka-Ekor",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Lihen",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Mengau",
+                     "value":"1"
+                  },
+                  {
+                     "name":"North Kamberataro",
+                     "value":"1"
+                  },
+                  {
+                     "name":"South Kamberataro",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Somahai",
+         "children":[
+            {
+               "name":"Momina [momi12",
+               "value":"1"
+            },
+            {
+               "name":"Momuna [momu12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"South-Eastern Tasmanian",
+         "children":[
+            {
+               "name":"Bruny Island [b",
+               "value":"1"
+            },
+            {
+               "name":"South-Eastern-Tasmanian-Hinterland [s",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Southern Daly",
+         "children":[
+            {
+               "name":"Murriny Patha [murr12",
+               "children":[
+                  {
+                     "name":"Murrinhdiminin",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Murrinhkura",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Murrinhpatha",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Nangikurrunggurr [nang12",
+               "children":[
+                  {
+                     "name":"Ngangi-Tjemerri",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Ngangi-Wumeri",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Ngenkiwumerri",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Tyemeri",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Tarascan",
+         "children":[
+            {
+               "name":"Purepecha [pure12",
+               "value":"1"
+            },
+            {
+               "name":"Western Highland Purepecha [west26",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Taulil-Butam",
+         "children":[
+            {
+               "name":"Butam [b",
+               "value":"1"
+            },
+            {
+               "name":"Taulil [taul12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Teberan",
+         "children":[
+            {
+               "name":"Dadibi [dadi12",
+               "children":[
+                  {
+                     "name":"Erave River",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Folopa [folo12",
+               "children":[
+                  {
+                     "name":"Aurei",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Bara {Papua New Guinea}",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Boro {Papua New Guinea}",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Keba-Wopasali",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Kewah",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Pupitau",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Ro",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Sesa",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Siligi",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Sopese",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Suri {Papua New Guinea}",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Tebera",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Waraga",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Temeinic",
+         "children":[
+            {
+               "name":"Temein [nucl13",
+               "value":"1"
+            },
+            {
+               "name":"Tese [tese12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Ticuna-Yuri",
+         "children":[
+            {
+               "name":"Juri [j",
+               "value":"1"
+            },
+            {
+               "name":"Ticuna [ticu12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Uru-Chipaya",
+         "children":[
+            {
+               "name":"Chipaya [chip12",
+               "value":"1"
+            },
+            {
+               "name":"Uru [uruu12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Western Tasmanian",
+         "children":[
+            {
+               "name":"Port Sorell [p",
+               "value":"1"
+            },
+            {
+               "name":"Western Coastal Tasmanian [w",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Wintuan",
+         "children":[
+            {
+               "name":"Patwin [patw12",
+               "children":[
+                  {
+                     "name":"Nuclear Patwin",
+                     "children":[
+                        {
+                           "name":"Hill Patwin",
+                           "value":"1"
+                        },
+                        {
+                           "name":"River Patwin",
+                           "value":"1"
+                        }
+                     ]
+                  },
+                  {
+                     "name":"Southern Patwin",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Wintu [wint12",
+               "children":[
+                  {
+                     "name":"Nomlaki [nom",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Nuclear Wintu [nuc",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Yawa-Saweru",
+         "children":[
+            {
+               "name":"Saweru [sawe12",
+               "value":"1"
+            },
+            {
+               "name":"Yawa [nucl14",
+               "children":[
+                  {
+                     "name":"Central Yawa",
+                     "value":"1"
+                  },
+                  {
+                     "name":"East Yawa",
+                     "value":"1"
+                  },
+                  {
+                     "name":"North Yawa",
+                     "value":"1"
+                  },
+                  {
+                     "name":"South Yawa",
+                     "value":"1"
+                  },
+                  {
+                     "name":"West Yawa",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Yuki-Wappo",
+         "children":[
+            {
+               "name":"Northern Yukian [yuki12",
+               "children":[
+                  {
+                     "name":"Coast Yuki",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Huchnom",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Yuki",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Wappo [wapp12",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Abinomn [abin12",
+         "value":"1"
+      },
+      {
+         "name":"Abun [abun12",
+         "children":[
+            {
+               "name":"Abun Je",
+               "value":"1"
+            },
+            {
+               "name":"Abun Ji",
+               "value":"1"
+            },
+            {
+               "name":"Abun Tat",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Adai [adai12",
+         "value":"1"
+      },
+      {
+         "name":"Aewa [abis12",
+         "value":"1"
+      },
+      {
+         "name":"Aikan [aika12",
+         "children":[
+            {
+               "name":"Masak",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Alsea-Yaquina [alse12",
+         "children":[
+            {
+               "name":"Alsea",
+               "value":"1"
+            },
+            {
+               "name":"Yaquina",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Ambakich [amba12",
+         "children":[
+            {
+               "name":"Northern Ambakich",
+               "value":"1"
+            },
+            {
+               "name":"Southern Ambakich",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Andaqui [anda12",
+         "value":"1"
+      },
+      {
+         "name":"Andoque [ando12",
+         "children":[
+            {
+               "name":"Andoke",
+               "value":"1"
+            },
+            {
+               "name":"Urekena",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Anem [anem12",
+         "children":[
+            {
+               "name":"Akiblik",
+               "value":"1"
+            },
+            {
+               "name":"Coastal Anem",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Ap Ma [apma12",
+         "children":[
+            {
+               "name":"Kambaramba",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Arutani [arut12",
+         "value":"1"
+      },
+      {
+         "name":"Asabano [suar12",
+         "value":"1"
+      },
+      {
+         "name":"Atacame [a",
+         "value":"1"
+      },
+      {
+         "name":"Atakapa [atak12",
+         "children":[
+            {
+               "name":"Eastern Atakapa",
+               "value":"1"
+            },
+            {
+               "name":"Western Atakapa",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Bangime [bang13",
+         "value":"1"
+      },
+      {
+         "name":"Basque [basq12",
+         "children":[
+            {
+               "name":"Alavan",
+               "value":"1"
+            },
+            {
+               "name":"Alto Navarro Meridional",
+               "value":"1"
+            },
+            {
+               "name":"Alto Navarro Septentrional",
+               "value":"1"
+            },
+            {
+               "name":"Basque/ Souletin",
+               "value":"1"
+            },
+            {
+               "name":"Biscayan",
+               "value":"1"
+            },
+            {
+               "name":"Guipuzcoan",
+               "value":"1"
+            },
+            {
+               "name":"Navarro-Labourdin Basque [bas",
+               "children":[
+                  {
+                     "name":"Eastern Low Navarrese",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Labourdin",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Western Low Navarrese",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Roncalese",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Beothuk [beot12",
+         "value":"1"
+      },
+      {
+         "name":"Berta [bert12",
+         "children":[
+            {
+               "name":"Bake",
+               "value":"1"
+            },
+            {
+               "name":"Dabuso",
+               "value":"1"
+            },
+            {
+               "name":"Fadashi",
+               "value":"1"
+            },
+            {
+               "name":"Gobato",
+               "value":"1"
+            },
+            {
+               "name":"Mayu",
+               "value":"1"
+            },
+            {
+               "name":"Shuru",
+               "value":"1"
+            },
+            {
+               "name":"Undu",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Betoi-Jirara [b",
+         "children":[
+            {
+               "name":"Nuclear Betoi-Jirara",
+               "children":[
+                  {
+                     "name":"Betoi",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Jirara",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Lolaca",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Mafilito",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Quilifay",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Situfa-Ayrico",
+               "children":[
+                  {
+                     "name":"Ayrico",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Situfa",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Bilua [bilu12",
+         "value":"1"
+      },
+      {
+         "name":"Bogaya [boga12",
+         "value":"1"
+      },
+      {
+         "name":"Burmeso [burm12",
+         "value":"1"
+      },
+      {
+         "name":"Burushaski [buru12",
+         "children":[
+            {
+               "name":"Hunza",
+               "value":"1"
+            },
+            {
+               "name":"Nagar",
+               "value":"1"
+            },
+            {
+               "name":"Yasin",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Cams [cams12",
+         "value":"1"
+      },
+      {
+         "name":"Candoshi-Shapra [cand12",
+         "children":[
+            {
+               "name":"Chapara",
+               "value":"1"
+            },
+            {
+               "name":"Chirino",
+               "value":"1"
+            },
+            {
+               "name":"Kandoashi",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Canichana [cani12",
+         "value":"1"
+      },
+      {
+         "name":"Cayubaba [cayu12",
+         "value":"1"
+      },
+      {
+         "name":"Cayuse [cayu12",
+         "value":"1"
+      },
+      {
+         "name":"Chimariko [chim13",
+         "value":"1"
+      },
+      {
+         "name":"Chitimacha [chit12",
+         "value":"1"
+      },
+      {
+         "name":"Chono [c",
+         "value":"1"
+      },
+      {
+         "name":"Coahuilteco [coah12",
+         "value":"1"
+      },
+      {
+         "name":"Cofn [cofa12",
+         "children":[
+            {
+               "name":"Aguarico",
+               "value":"1"
+            },
+            {
+               "name":"Santa Rosa",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Comecrudan [come12",
+         "children":[
+            {
+               "name":"Comecrudo",
+               "value":"1"
+            },
+            {
+               "name":"Garza [gar",
+               "value":"1"
+            },
+            {
+               "name":"Mamulique",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Cotoname [coto12",
+         "value":"1"
+      },
+      {
+         "name":"Cuitlatec [cuit12",
+         "value":"1"
+      },
+      {
+         "name":"Culli [c",
+         "value":"1"
+      },
+      {
+         "name":"Damal [dama12",
+         "children":[
+            {
+               "name":"Amongme",
+               "value":"1"
+            },
+            {
+               "name":"Amung",
+               "value":"1"
+            },
+            {
+               "name":"Enggipilu",
+               "value":"1"
+            },
+            {
+               "name":"Nuclear Damal",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Dem [demm12",
+         "value":"1"
+      },
+      {
+         "name":"Dibiyaso [dibi12",
+         "value":"1"
+      },
+      {
+         "name":"Duna [duna12",
+         "value":"1"
+      },
+      {
+         "name":"Elamite [elam12",
+         "value":"1"
+      },
+      {
+         "name":"Elseng [else12",
+         "value":"1"
+      },
+      {
+         "name":"Esselen [esse12",
+         "value":"1"
+      },
+      {
+         "name":"Etruscan [etru12",
+         "value":"1"
+      },
+      {
+         "name":"Fasu [fasu12",
+         "children":[
+            {
+               "name":"Kaibu",
+               "value":"1"
+            },
+            {
+               "name":"Namome",
+               "value":"1"
+            },
+            {
+               "name":"Some",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Fulni [fuln12",
+         "children":[
+            {
+               "name":"Fulni Proper",
+               "value":"1"
+            },
+            {
+               "name":"Yat",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Gaagudju [gaga12",
+         "value":"1"
+      },
+      {
+         "name":"Guachi [g",
+         "value":"1"
+      },
+      {
+         "name":"Guaicurian [g",
+         "value":"1"
+      },
+      {
+         "name":"Guamo [g",
+         "children":[
+            {
+               "name":"San Jos Guamo",
+               "value":"1"
+            },
+            {
+               "name":"Santa Rosa Guamo",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Guat [guat12",
+         "value":"1"
+      },
+      {
+         "name":"Gule [gule12",
+         "value":"1"
+      },
+      {
+         "name":"Guriaso [guri12",
+         "value":"1"
+      },
+      {
+         "name":"Hadza [hadz12",
+         "value":"1"
+      },
+      {
+         "name":"Hattic [hatt12",
+         "value":"1"
+      },
+      {
+         "name":"Hruso [hrus12",
+         "children":[
+            {
+               "name":"Hush",
+               "value":"1"
+            },
+            {
+               "name":"Levai",
+               "value":"1"
+            },
+            {
+               "name":"usso",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Iberian [iber12",
+         "value":"1"
+      },
+      {
+         "name":"Irntxe-Mnk [iran12",
+         "children":[
+            {
+               "name":"Irntxe",
+               "value":"1"
+            },
+            {
+               "name":"Mnk",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Itonama [iton12",
+         "value":"1"
+      },
+      {
+         "name":"Jalaa [cent20",
+         "value":"1"
+      },
+      {
+         "name":"Jirajaran [j",
+         "children":[
+            {
+               "name":"Ayomn",
+               "value":"1"
+            },
+            {
+               "name":"Gayn",
+               "value":"1"
+            },
+            {
+               "name":"Jirajara",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Kaki Ae [kaki12",
+         "value":"1"
+      },
+      {
+         "name":"Kano [kano12",
+         "value":"1"
+      },
+      {
+         "name":"Kapori [kapo12",
+         "value":"1"
+      },
+      {
+         "name":"Karami [kara14",
+         "value":"1"
+      },
+      {
+         "name":"Karankawa [kara12",
+         "value":"1"
+      },
+      {
+         "name":"Kariri [k",
+         "children":[
+            {
+               "name":"Dzubukua",
+               "value":"1"
+            },
+            {
+               "name":"Kamur",
+               "value":"1"
+            },
+            {
+               "name":"Kipea",
+               "value":"1"
+            },
+            {
+               "name":"Sabuj",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Karok [karo13",
+         "value":"1"
+      },
+      {
+         "name":"Kaure-Narau [kaur12",
+         "value":"1"
+      },
+      {
+         "name":"Kehu [kehu12",
+         "value":"1"
+      },
+      {
+         "name":"Kenaboi [kena12",
+         "value":"1"
+      },
+      {
+         "name":"Kibiri [kibi12",
+         "children":[
+            {
+               "name":"Aird Hills",
+               "value":"1"
+            },
+            {
+               "name":"Porome",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Kimki [kimk12",
+         "value":"1"
+      },
+      {
+         "name":"Klamath-Modoc [klam12",
+         "value":"1"
+      },
+      {
+         "name":"Kol {Papua New Guinea} [kolp12",
+         "children":[
+            {
+               "name":"Kol",
+               "value":"1"
+            },
+            {
+               "name":"Sui {Papua New Guinea}",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Kosadle [kosa12",
+         "value":"1"
+      },
+      {
+         "name":"Kujarge [kuja12",
+         "value":"1"
+      },
+      {
+         "name":"Kunama [kuna12",
+         "children":[
+            {
+               "name":"Aimara",
+               "value":"1"
+            },
+            {
+               "name":"Barka",
+               "value":"1"
+            },
+            {
+               "name":"Bitama",
+               "value":"1"
+            },
+            {
+               "name":"Ilit",
+               "value":"1"
+            },
+            {
+               "name":"Marda",
+               "value":"1"
+            },
+            {
+               "name":"Sokodasa",
+               "value":"1"
+            },
+            {
+               "name":"Takazze-Setiit",
+               "value":"1"
+            },
+            {
+               "name":"Tigray",
+               "value":"1"
+            },
+            {
+               "name":"Tika",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Kungarakany [kung12",
+         "value":"1"
+      },
+      {
+         "name":"Kunza [kunz12",
+         "value":"1"
+      },
+      {
+         "name":"Kuot [kuot12",
+         "value":"1"
+      },
+      {
+         "name":"Kusunda [kusu12",
+         "value":"1"
+      },
+      {
+         "name":"Kutenai [kute12",
+         "value":"1"
+      },
+      {
+         "name":"Kwaza [kwaz12",
+         "value":"1"
+      },
+      {
+         "name":"Laal [laal12",
+         "children":[
+            {
+               "name":"Laabe",
+               "value":"1"
+            },
+            {
+               "name":"Nuclear Laal",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Lafofa [lafo12",
+         "children":[
+            {
+               "name":"Jebel El Amira",
+               "value":"1"
+            },
+            {
+               "name":"Jebel Tekeim",
+               "value":"1"
+            },
+            {
+               "name":"Nuclear Lafofa",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Laragia [lara12",
+         "value":"1"
+      },
+      {
+         "name":"Lavukaleve [lavu12",
+         "value":"1"
+      },
+      {
+         "name":"Leco [leco12",
+         "value":"1"
+      },
+      {
+         "name":"Lomeriano-Ignaciano Chiquitano [chiq12",
+         "children":[
+            {
+               "name":"Concepcin",
+               "value":"1"
+            },
+            {
+               "name":"Jesuit Chiquitano",
+               "value":"1"
+            },
+            {
+               "name":"San Ignacio de Velazco",
+               "value":"1"
+            },
+            {
+               "name":"San Javier",
+               "value":"1"
+            },
+            {
+               "name":"Santiago",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Lule [lule12",
+         "value":"1"
+      },
+      {
+         "name":"Mku [maku12",
+         "value":"1"
+      },
+      {
+         "name":"Maratino [m",
+         "value":"1"
+      },
+      {
+         "name":"Marori [moro12",
+         "value":"1"
+      },
+      {
+         "name":"Massep [mass12",
+         "value":"1"
+      },
+      {
+         "name":"Matanaw [m",
+         "value":"1"
+      },
+      {
+         "name":"Mato Grosso Arra [mato12",
+         "value":"1"
+      },
+      {
+         "name":"Mawes [mawe12",
+         "value":"1"
+      },
+      {
+         "name":"Maybrat-Karon [maib12",
+         "children":[
+            {
+               "name":"Karon Dori [kar",
+               "value":"1"
+            },
+            {
+               "name":"Maimaka",
+               "value":"1"
+            },
+            {
+               "name":"Maisawiet",
+               "value":"1"
+            },
+            {
+               "name":"Maisefa",
+               "value":"1"
+            },
+            {
+               "name":"Maite",
+               "value":"1"
+            },
+            {
+               "name":"Maiyah",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Meroitic [mero12",
+         "value":"1"
+      },
+      {
+         "name":"Migueleo Chiquitano [s",
+         "value":"1"
+      },
+      {
+         "name":"Mimi-Gaudefroy [m",
+         "value":"1"
+      },
+      {
+         "name":"Minkin [mink12",
+         "value":"1"
+      },
+      {
+         "name":"Mochica [moch12",
+         "value":"1"
+      },
+      {
+         "name":"Molale [mola12",
+         "value":"1"
+      },
+      {
+         "name":"Molof [molo12",
+         "value":"1"
+      },
+      {
+         "name":"Mor {Bomberai Peninsula} [morb12",
+         "value":"1"
+      },
+      {
+         "name":"Mosetn-Chiman [mose12",
+         "value":"1"
+      },
+      {
+         "name":"Movima [movi12",
+         "value":"1"
+      },
+      {
+         "name":"Mpur [mpur12",
+         "children":[
+            {
+               "name":"Ajiw",
+               "value":"1"
+            },
+            {
+               "name":"Sirir",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Muniche [muni12",
+         "value":"1"
+      },
+      {
+         "name":"Mure [m",
+         "value":"1"
+      },
+      {
+         "name":"Nara [nara12",
+         "children":[
+            {
+               "name":"Eastern Nara",
+               "children":[
+                  {
+                     "name":"Higir",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Mogareb",
+                     "value":"1"
+                  }
+               ]
+            },
+            {
+               "name":"Western Nara",
+               "children":[
+                  {
+                     "name":"Koyta",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Santora",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Natchez [natc12",
+         "value":"1"
+      },
+      {
+         "name":"Nihali [niha12",
+         "value":"1"
+      },
+      {
+         "name":"Odiai [odia12",
+         "value":"1"
+      },
+      {
+         "name":"Omurano [omur12",
+         "value":"1"
+      },
+      {
+         "name":"Ongota [bira12",
+         "value":"1"
+      },
+      {
+         "name":"Oti [otii12",
+         "value":"1"
+      },
+      {
+         "name":"Oyster Bay-Big River-Little Swanport [o",
+         "value":"1"
+      },
+      {
+         "name":"Pez [paez12",
+         "children":[
+            {
+               "name":"Paniquita",
+               "value":"1"
+            },
+            {
+               "name":"Pitayo",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Pankarar [pank12",
+         "value":"1"
+      },
+      {
+         "name":"Papi [papi12",
+         "value":"1"
+      },
+      {
+         "name":"Pawaia [pawa12",
+         "children":[
+            {
+               "name":"Aurama",
+               "value":"1"
+            },
+            {
+               "name":"Hauruha",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Payagua [p",
+         "value":"1"
+      },
+      {
+         "name":"Pele-Ata [pele12",
+         "children":[
+            {
+               "name":"Ata {New Britain}",
+               "value":"1"
+            },
+            {
+               "name":"Pele {New Britain}",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Pirah [pira12",
+         "children":[
+            {
+               "name":"Mra",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Puelche [puel12",
+         "value":"1"
+      },
+      {
+         "name":"Puinave [puin12",
+         "value":"1"
+      },
+      {
+         "name":"Pum [pume12",
+         "value":"1"
+      },
+      {
+         "name":"Puquina [puqu12",
+         "value":"1"
+      },
+      {
+         "name":"Purari [pura12",
+         "children":[
+            {
+               "name":"Iai",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Pyu [pyuu12",
+         "value":"1"
+      },
+      {
+         "name":"Ramanos [r",
+         "value":"1"
+      },
+      {
+         "name":"Salinan [sali12",
+         "value":"1"
+      },
+      {
+         "name":"Sandawe [sand12",
+         "value":"1"
+      },
+      {
+         "name":"Sap [sape12",
+         "value":"1"
+      },
+      {
+         "name":"Sause [saus12",
+         "value":"1"
+      },
+      {
+         "name":"Savosavo [savo12",
+         "value":"1"
+      },
+      {
+         "name":"Sechuran [s",
+         "children":[
+            {
+               "name":"Olmos",
+               "value":"1"
+            },
+            {
+               "name":"Sec",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Seri [seri12",
+         "value":"1"
+      },
+      {
+         "name":"Shabo [shab12",
+         "value":"1"
+      },
+      {
+         "name":"Shom Peng [shom12",
+         "value":"1"
+      },
+      {
+         "name":"Siamou [siam12",
+         "children":[
+            {
+               "name":"Bandougou",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Siuslaw [sius12",
+         "value":"1"
+      },
+      {
+         "name":"Sulka [sulk12",
+         "value":"1"
+      },
+      {
+         "name":"Sumerian [sume12",
+         "value":"1"
+      },
+      {
+         "name":"Tabo [tabo12",
+         "children":[
+            {
+               "name":"Aramia River",
+               "value":"1"
+            },
+            {
+               "name":"Fly River",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Taiap [taia12",
+         "value":"1"
+      },
+      {
+         "name":"Takelma [take12",
+         "value":"1"
+      },
+      {
+         "name":"Talln [t",
+         "children":[
+            {
+               "name":"Catacaos",
+               "value":"1"
+            },
+            {
+               "name":"Coln",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Tambora [tamb12",
+         "value":"1"
+      },
+      {
+         "name":"Tanahmerah [tana12",
+         "value":"1"
+      },
+      {
+         "name":"Taruma [taru12",
+         "value":"1"
+      },
+      {
+         "name":"Taushiro [taus12",
+         "value":"1"
+      },
+      {
+         "name":"Timote-Cuica [t",
+         "children":[
+            {
+               "name":"Cuica",
+               "value":"1"
+            },
+            {
+               "name":"Timote",
+               "children":[
+                  {
+                     "name":"Miguri",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Mirripu",
+                     "value":"1"
+                  },
+                  {
+                     "name":"Mucunchi",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Timucua [timu12",
+         "children":[
+            {
+               "name":"Tawasa",
+               "value":"1"
+            },
+            {
+               "name":"Timuqva",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Tinigua [tini12",
+         "children":[
+            {
+               "name":"Pamigua",
+               "value":"1"
+            },
+            {
+               "name":"Tinigua Proper",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Tiwi [tiwi12",
+         "value":"1"
+      },
+      {
+         "name":"Tonkawa [tonk12",
+         "value":"1"
+      },
+      {
+         "name":"Touo [touo12",
+         "value":"1"
+      },
+      {
+         "name":"Trumai [trum12",
+         "value":"1"
+      },
+      {
+         "name":"Tunica [tuni12",
+         "value":"1"
+      },
+      {
+         "name":"Tux [tuxa12",
+         "value":"1"
+      },
+      {
+         "name":"Umbugarla [umbu12",
+         "value":"1"
+      },
+      {
+         "name":"Urarina [urar12",
+         "value":"1"
+      },
+      {
+         "name":"Usku [usku12",
+         "value":"1"
+      },
+      {
+         "name":"Vilela [vile12",
+         "value":"1"
+      },
+      {
+         "name":"Wadjiginy [wadj12",
+         "children":[
+            {
+               "name":"Pungupungu",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Wageman [wage12",
+         "value":"1"
+      },
+      {
+         "name":"Waorani [waor12",
+         "value":"1"
+      },
+      {
+         "name":"Warao [wara13",
+         "value":"1"
+      },
+      {
+         "name":"Washo [wash12",
+         "value":"1"
+      },
+      {
+         "name":"Wiru [wiru12",
+         "value":"1"
+      },
+      {
+         "name":"Xukur [xuku12",
+         "children":[
+            {
+               "name":"Paratio",
+               "value":"1"
+            },
+            {
+               "name":"Xucuru",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Yale [yale12",
+         "value":"1"
+      },
+      {
+         "name":"Ymana [yama12",
+         "children":[
+            {
+               "name":"Central Ymana",
+               "value":"1"
+            },
+            {
+               "name":"East Ymana",
+               "value":"1"
+            },
+            {
+               "name":"West Ymana",
+               "value":"1"
+            },
+            {
+               "name":"Wollaston-South Ymana",
+               "children":[
+                  {
+                     "name":"South Ymana",
+                     "children":[
+                        {
+                           "name":"Hatuwaia",
+                           "value":"1"
+                        },
+                        {
+                           "name":"Ufyargo",
+                           "value":"1"
+                        }
+                     ]
+                  },
+                  {
+                     "name":"Wollaston Ymana",
+                     "value":"1"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Yana [yana12",
+         "children":[
+            {
+               "name":"Central Yana",
+               "value":"1"
+            },
+            {
+               "name":"Northern Yana",
+               "value":"1"
+            },
+            {
+               "name":"Southern Yana",
+               "value":"1"
+            },
+            {
+               "name":"Yahi",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Yele [yele12",
+         "children":[
+            {
+               "name":"Abaletti",
+               "value":"1"
+            },
+            {
+               "name":"Bou",
+               "value":"1"
+            },
+            {
+               "name":"Daminyu",
+               "value":"1"
+            },
+            {
+               "name":"Jaru {Papua New Guinea}",
+               "value":"1"
+            },
+            {
+               "name":"Jinjo",
+               "value":"1"
+            },
+            {
+               "name":"Wulanga",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Yerakai [yera12",
+         "value":"1"
+      },
+      {
+         "name":"Yetfa [yetf12",
+         "value":"1"
+      },
+      {
+         "name":"Yuchi [yuch12",
+         "value":"1"
+      },
+      {
+         "name":"Yuracar [yura12",
+         "children":[
+            {
+               "name":"Mansinyo",
+               "value":"1"
+            },
+            {
+               "name":"Soloto",
+               "value":"1"
+            }
+         ]
+      },
+      {
+         "name":"Yurumangu [y",
+         "value":"1"
+      },
+      {
+         "name":"Zuni [zuni12",
+         "value":"1"
+      }
+   ]
+}

@@ -251,93 +251,52 @@ d3 = require("d3@5", "d3-tile@1")*/
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
-<h1> Languages Dashboard</h1>
+  <style>
+    .flex-container {
+  display: flex;
+  flex-direction: column;
+  background-color: DodgerBlue;
+}
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>Where's your language?</h1>
+    <p>Languages Dashboard</p> 
+  </div>
+
 </head>
 <!-- Load d3.js -->
-<script src="http://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
 <!-- Create an element where the map will take place -->
-<svg id="my_dataviz" width="650" height="300"></svg>
-<script>
 
-// The svg
-var svg = d3.select("svg"),
-  width = +svg.attr("width"),
-  height = +svg.attr("height");
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-lg-16" style="margin-left:-300px">
+      <svg id="radial_dendrogram" width="1000" height="1000"></svg>
+      </div>
+    <div class="col-lg-8">
 
-// Map and projection
-var path = d3.geoPath();
-var projection = d3.geoEquirectangular()
-  .scale(100)
-  .center([0,20])
-  .translate([width / 2, height / 2]);
+  <svg id="my_dataviz" width="800" height="300"></svg>
 
-// Data and color scale
-var data = d3.map();
-var colorScale = d3.scaleThreshold()
-  .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
-  .range(d3.schemeBlues[7]);
+</div>
 
-// Load external data and boot
-d3.queue()
-  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-  .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
-  .await(ready);
+</div>
+</div>
 
-function ready(error, topo) {
+  <script src="{{
+  url_for('static', filename='index.js') }}"></script>
 
-  let mouseOver = function(d) {
-    d3.selectAll(".Country")
-      .transition()
-      .duration(200)
-      .style("opacity", .5)
-    d3.select(this)
-      .transition()
-      .duration(200)
-      .style("opacity", 1)
-      .style("stroke", "black")
-  }
-
-  let mouseLeave = function(d) {
-    d3.selectAll(".Country")
-      .transition()
-      .duration(200)
-      .style("opacity", .8)
-    d3.select(this)
-      .transition()
-      .duration(200)
-      .style("stroke", "")
-  }
-
-  let mouseClick = function(d){
-    var country = d3.select(this).attr("id")
-    console.log(country)
-
-  }  
-  // Draw the map
-  svg.append("g")
-    .selectAll("path")
-    .data(topo.features)
-    .enter()
-    .append("path")
-    .attr("id", function(d){return d.properties["name"]})
-      // draw each country
-      .attr("d", d3.geoPath()
-        .projection(projection)
-      )
-      // set the color of each country
-      .attr("fill", function (d) {
-        d.total = data.get(d.id) || 0;
-        return colorScale(d.total);
-      })
-      .style("stroke", "transparent")
-      .attr("class", function(d){ return "Country" } )
-      .style("opacity", .8)
-      .on("mouseover", mouseOver )
-      .on("mouseleave", mouseLeave )
-      .on("click", mouseClick)
-    }
-
-</script>
