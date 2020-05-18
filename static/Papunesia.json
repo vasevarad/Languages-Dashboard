@@ -1,0 +1,333 @@
+{
+    "name": "Papunesia",
+    "children": [
+      {
+        "name": "Indo-European",
+        "value": "indo13194"
+      },
+      {
+        "name": "Bookkeeping",
+        "value": "book1242"
+      },
+      {
+        "name": "Sign Language",
+        "value": "sign1238"
+      },
+      {
+        "name": "Unclassifiable",
+        "value": "uncl1493"
+      },
+      {
+        "name": "Pidgin",
+        "value": "pidg1258"
+      },
+      {
+        "name": "Unattested",
+        "value": "unat1236"
+      },
+      {
+        "name": "Artificial Language",
+        "value": "arti1236"
+      },
+      {
+        "name": "Austronesian",
+        "value": "aust13072"
+      },
+      {
+        "name": "Speech Register",
+        "value": "spee1234"
+      },
+      {
+        "name": "Austroasiatic",
+        "value": "aust1305"
+      },
+      {
+        "name": "Japonic",
+        "value": "japo1237"
+      },
+      {
+        "name": "Great Andamanese",
+        "value": "grea1241"
+      },
+      {
+        "name": "Nuclear Trans New Guinea",
+        "value": "nucl1709"
+      },
+      {
+        "name": "Nuclear Torricelli",
+        "value": "nucl1708"
+      },
+      {
+        "name": "Sepik",
+        "value": "sepi1257"
+      },
+      {
+        "name": "Lower Sepik-Ramu",
+        "value": "lowe1437"
+      },
+      {
+        "name": "Timor-Alor-Pantar",
+        "value": "timo1261"
+      },
+      {
+        "name": "Lakes Plain",
+        "value": "lake1255"
+      },
+      {
+        "name": "Yam",
+        "value": "more1255"
+      },
+      {
+        "name": "Anim",
+        "value": "anim1240"
+      },
+      {
+        "name": "Border",
+        "value": "bord1247"
+      },
+      {
+        "name": "North Halmahera",
+        "value": "nort2923"
+      },
+      {
+        "name": "Angan",
+        "value": "anga1289"
+      },
+      {
+        "name": "Ndu",
+        "value": "nduu1242"
+      },
+      {
+        "name": "Tor-Orya",
+        "value": "toro1256"
+      },
+      {
+        "name": "Geelvink Bay",
+        "value": "geel1240"
+      },
+      {
+        "name": "Sko",
+        "value": "skoo1245"
+      },
+      {
+        "name": "Dagan",
+        "value": "daga1274"
+      },
+      {
+        "name": "South Bougainville",
+        "value": "sout2948"
+      },
+      {
+        "name": "Greater Kwerba",
+        "value": "kwer1242"
+      },
+      {
+        "name": "Koiarian",
+        "value": "koia1260"
+      },
+      {
+        "name": "Mailuan",
+        "value": "mail1249"
+      },
+      {
+        "name": "Bosavi",
+        "value": "bosa1245"
+      },
+      {
+        "name": "Baining",
+        "value": "bain1263"
+      },
+      {
+        "name": "East Strickland",
+        "value": "east2433"
+      },
+      {
+        "name": "Goilalan",
+        "value": "goil1242"
+      },
+      {
+        "name": "Kiwaian",
+        "value": "kiwa1251"
+      },
+      {
+        "name": "Left May",
+        "value": "left1242"
+      },
+      {
+        "name": "South Bird's Head Family",
+        "value": "sout1516"
+      },
+      {
+        "name": "Eleman",
+        "value": "nucl1580"
+      },
+      {
+        "name": "Nimboranic",
+        "value": "nimb1257"
+      },
+      {
+        "name": "Pauwasi",
+        "value": "pauw1244"
+      },
+      {
+        "name": "West Bird's Head",
+        "value": "west1493"
+      },
+      {
+        "name": "Yareban",
+        "value": "yare1250"
+      },
+      {
+        "name": "Yuat",
+        "value": "yuat1252"
+      },
+      {
+        "name": "Arafundi",
+        "value": "araf1243"
+      },
+      {
+        "name": "Eastern Trans-Fly",
+        "value": "east2503"
+      },
+      {
+        "name": "North Bougainville",
+        "value": "nort2933"
+      },
+      {
+        "name": "Sentanic",
+        "value": "sent1261"
+      },
+      {
+        "name": "Suki-Gogodala",
+        "value": "suki1244"
+      },
+      {
+        "name": "Turama-Kikori",
+        "value": "tura1263"
+      },
+      {
+        "name": "Walioic",
+        "value": "wali1264"
+      },
+      {
+        "name": "East Bird's Head",
+        "value": "east1459"
+      },
+      {
+        "name": "Kamula-Elevala",
+        "value": "kamu1264"
+      },
+      {
+        "name": "Kayagaric",
+        "value": "kaya1327"
+      },
+      {
+        "name": "Kolopom",
+        "value": "kolo1268"
+      },
+      {
+        "name": "Kwalean",
+        "value": "kwal1257"
+      },
+      {
+        "name": "Lepki-Murkim-Kembra",
+        "value": "lepk1239"
+      },
+      {
+        "name": "Mairasic",
+        "value": "mair1253"
+      },
+      {
+        "name": "Ulmapo",
+        "value": "mong1343"
+      },
+      {
+        "name": "West Bomberai",
+        "value": "west2604"
+      },
+      {
+        "name": "Amto-Musan",
+        "value": "amto1249"
+      },
+      {
+        "name": "Baibai-Fas",
+        "value": "baib1250"
+      },
+      {
+        "name": "Bayono-Awbono",
+        "value": "bayo1259"
+      },
+      {
+        "name": "Bogia",
+        "value": "monu1249"
+      },
+      {
+        "name": "Bulaka River",
+        "value": "bula1259"
+      },
+      {
+        "name": "Doso-Turumsa",
+        "value": "doso1238"
+      },
+      {
+        "name": "East Kutubu",
+        "value": "east2499"
+      },
+      {
+        "name": "Hatam-Mansim",
+        "value": "hata1242"
+      },
+      {
+        "name": "Inanwatan",
+        "value": "inan1242"
+      },
+      {
+        "name": "Konda-Yahadian",
+        "value": "kond1302"
+      },
+      {
+        "name": "Kwomtari-Nai",
+        "value": "kwom1263"
+      },
+      {
+        "name": "Manubaran",
+        "value": "manu1261"
+      },
+      {
+        "name": "Mombum-Koneraw",
+        "value": "momb1255"
+      },
+      {
+        "name": "Namla-Tofanma",
+        "value": "naml1239"
+      },
+      {
+        "name": "Pahoturi",
+        "value": "paho1240"
+      },
+      {
+        "name": "Piawi",
+        "value": "piaw1238"
+      },
+      {
+        "name": "Senagi",
+        "value": "sena1264"
+      },
+      {
+        "name": "Somahai",
+        "value": "soma1242"
+      },
+      {
+        "name": "Taulil-Butam",
+        "value": "taul1250"
+      },
+      {
+        "name": "Teberan",
+        "value": "tebe1251"
+      },
+      {
+        "name": "Yawa-Saweru",
+        "value": "yawa1259"
+      }
+    ]
+  }

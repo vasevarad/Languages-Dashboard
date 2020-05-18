@@ -266,6 +266,8 @@ d3 = require("d3@5", "d3-tile@1")*/
   font-size: 30px;
 }
   </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <div class="jumbotron text-center" style="margin-bottom:0">
@@ -276,27 +278,35 @@ d3 = require("d3@5", "d3-tile@1")*/
 </head>
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
 <!-- Create an element where the map will take place -->
 
-<div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-lg-16" style="margin-left:-300px">
-      <svg id="radial_dendrogram" width="1000" height="1000"></svg>
+<!--<div class="container" style="margin-top:30px">
+--> <div class="row">
+  <!-- <div class="col-lg-8" style="margin-left:-300px">-->
+      <svg id="radial_dendrogram" width="900" height="1000"></svg>
+      
+<!--
       </div>
-    <div class="col-lg-8">
+    <div class="col-lg-8">-->
+      <svg id="my_dataviz" width="600" height="300" style="margin-top:100px"></svg>
+    </div>
 
-  <svg id="my_dataviz" width="800" height="300"></svg>
-
+    <!--<div class="container" style="margin-top:30px">
+--> <div class="row">
+  <div class="col-lg-8" style="text-align:right">
+    <h2>Hello</h2>
+    <p>This is Vasudha</p>
+        </div></div>
+<!--
 </div>
 
 </div>
 </div>
-
+-->
   <script src="{{
   url_for('static', filename='index.js') }}"></script>
 

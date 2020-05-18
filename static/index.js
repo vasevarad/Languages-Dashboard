@@ -15,7 +15,7 @@ var projection = d3.geoEquirectangular()
 var data = d3.map();
 var colorScale = d3.scaleThreshold()
   .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
-  .range(d3.schemeReds[6]);
+  .range(d3.schemeGreys[6]);
 
 // Load external data and boot
 
@@ -49,13 +49,14 @@ function ready(error, topo) {
       .duration(200)
       .style("stroke", "")
   }
-
+console.log("Here")
   let mouseClick = function(d){
     var country = d3.select(this).attr("id")
     console.log(country)
 
   }  
   // Draw the map
+  svg.selectAll("*").remove()
   svg.append("g")
     .selectAll("path")
     .data(topo.features)
@@ -79,110 +80,26 @@ function ready(error, topo) {
       .on("click", mouseClick)
 }
 
+category = "Families"
 
+function updateDendrogram(category){
 
+d3.json("static/"+ category+".json", function(error, data) {
 
-
-/*
-
- svg.append("g")
-      .attr("fill", "none")
-      .attr("stroke", "#555")
-      .attr("stroke-opacity", 0.4)
-      .attr("stroke-width", 1.5)
-    .selectAll("path")
-    .data(root.links())
-    .join("path")
-      .attr("d", d3.linkRadial()
-          .angle(d => d.x)
-          .radius(d => d.y));
-  
-  svg.append("g")
-    .selectAll("circle")
-    .data(root.descendants())
-    .join("circle")
-      .attr("transform", d => `
-        rotate(${d.x * 180 / Math.PI - 90})
-        translate(${d.y},0)
-      `)
-      .attr("fill", d => d.children ? "#555" : "#999")
-      .attr("r", 2.5);
-
-  svg.append("g")
-      .attr("font-family", "sans-serif")
-      .attr("font-size", 10)
-      .attr("stroke-linejoin", "round")
-      .attr("stroke-width", 3)
-    .selectAll("text")
-    .data(root.descendants())
-    .join("text")
-      .attr("transform", d => `
-        rotate(${d.x * 180 / Math.PI - 90}) 
-        translate(${d.y},0) 
-        rotate(${d.x >= Math.PI ? 180 : 0})
-      `)
-      .attr("dy", "0.31em")
-      .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
-      .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
-      .text(d => d.data.name)
-    .clone(true).lower()
-      .attr("stroke", "white");
-
-
-
-
-*/
-
-
-
-
-//radial dendrogram
-/*
-var svg = d3.select("#radial_dendrogram"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height")
-var g = svg.append("g").attr("transform", "translate(" + (width / 2 - 15) + "," + (height / 2 + 25) + ")");
-
-var stratify = d3.stratify()
-    .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
-*/
-
-let clickCategory = function(d){
-  var country = d3.select(this).text()
-  console.log(country)
-
-}  
-
-
-svg1 = d3.select("#radial_dendrogram")
-width = svg1.attr("width"),
-height = svg1.attr("height")
-svg1 = svg1.append("g").attr("transform", "translate(" + (width / 2 ) + "," + (height / 2 + 25) + ")");
-
-var radius = width/2 - 150
-console.log("radius:" + radius)
-/*var tree = d3.tree()
-.size([2 * Math.PI, radius])
-.separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth)*/
-tree =d3.tree()
-.size([2 * Math.PI, radius])
-.separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth)
-
-console.log("here1")
-d3.json("static/families.json", function(error, data) {
   if (error) {
   throw error;}
   console.log(data)
   const root = tree(d3.hierarchy(data))
   .sort((a, b) => d3.ascending(a.data.name, b.data.name))
+  svg1.selectAll("*").remove()
   path = svg1.append("g")
   .attr("fill", "none")
-  .attr("stroke", "#555")
+  .attr("stroke", "#c0c0c2")
   .attr("stroke-opacity", 0.4)
   .attr("stroke-width", 1.5)
 .selectAll("path")
 .data(root.links())
-.enter().append("path").attr("d", d3.linkRadial()
+.enter().append("path").transition().duration(200).attr("d", d3.linkRadial()
       .angle(d => d.x)
       .radius(d => d.y));
 
@@ -204,7 +121,7 @@ svg1.append("g")
   .attr("stroke-width", 3)
 .selectAll("text")
 .data(root.descendants())
-.enter().append("text")
+.enter().append("text").attr("class", "graph_path")
   .attr("transform", d => `
     rotate(${d.x * 180 / Math.PI - 90}) 
     translate(${d.y},0) 
@@ -215,6 +132,8 @@ svg1.append("g")
   .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
   .text(d => d.data.name)
   .on("click", clickCategory)
+  .on("mouseover", treehover )
+  .on("mouseout", treeleave)
 .clone(true).lower()
   .attr("stroke", "white");
  /* THIS WORKS
@@ -393,6 +312,80 @@ svg.append("g")
       .text(function(d) { return d.id.substring(d.id.lastIndexOf(".") + 1); });*/
       
 });
+
+}
+
+currentCategory = ""
+
+let clickCategory = function(){
+  var category = d3.select(this).text()
+  //console.log(category)
+  if(currentCategory == category || category == "Families"){ updateDendrogram("Families")}
+  else if(["Africa", "Australia", "North America", "South America", "Eurasia", "Papunesia"].includes(category)){
+    currentCategory = category;
+
+      d3.queue()
+  .defer(d3.json, "static/continents/" + category + ".json")
+  .defer(d3.csv, "static/world_population.csv", function(d) { data.set(d.code, +d.pop); })
+  .await(ready);
+  
+
+
+  updateDendrogram(category)
+}
+
+  else{
+    $.post("", {'data': 'get_countries', "family":category}, function(data_infunc){
+ 
+      });
+ 
+  }
+
+}  
+var transform;
+let treehover =  function(){
+  d3.selectAll(".graph_path")
+  .transition()
+  .duration(200)
+  .style("opacity", .2)
+
+  d3.select(this)
+  .transition()
+  .duration(200)
+  .style("opacity", 1)
+  .attr("font-size", 14)
+
+}
+
+let treeleave = function(){
+  d3.selectAll(".graph_path")
+  .transition()
+  .duration(200)
+  .style("opacity", 1)
+  //console.log(transform)
+  d3.select(this)
+  .transition()
+  .duration(200)
+  .style("opacity", 1)
+  .attr("font-size", 10)
+}
+
+svg1 = d3.select("#radial_dendrogram")
+width = 900,
+height = svg1.attr("height")
+svg1 = svg1.append("g").attr("transform", "translate(" + (width / 2 ) + "," + (height / 2 + 25) + ")");
+
+
+var radius = width/2 - 120
+console.log("radius:" + radius)
+/*var tree = d3.tree()
+.size([2 * Math.PI, radius])
+.separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth)*/
+tree =d3.tree()
+.size([2 * Math.PI, radius])
+.separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth)
+
+updateDendrogram("families")
 
 function project(x, y) {
   var angle = (x - 90) / 180 * Math.PI, radius = y;
