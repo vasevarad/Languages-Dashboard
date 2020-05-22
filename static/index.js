@@ -1,5 +1,5 @@
 
-// The svg
+function updateChoropleth(countries){
 var svg = d3.select("#my_dataviz"),
   width = +svg.attr("width"),
   height = +svg.attr("height");
@@ -14,20 +14,30 @@ var projection = d3.geoEquirectangular()
 // Data and color scale
 var data = d3.map();
 var colorScale = d3.scaleThreshold()
-  .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
-  .range(d3.schemeGreys[6]);
+.domain([0,5,10,15,50,100,100,500,1000, 1200, 1500])
+  .range(d3.schemeOranges[9]);
 
 // Load external data and boot
 
-console.log("maphere")
 d3.queue()
   .defer(d3.json, "static/world.geojson")
-  .defer(d3.csv, "static/world_population.csv", function(d) { data.set(d.code, +d.pop); })
+  .defer(d3.csv, "static/world_population.csv")//, function(d) { data.set(d.code, +d.pop); })
   .await(ready);
+
+  var tooltip = d3.select("body")
+  .append("div")
+  .style("position", "absolute")
+  .style("background-color", "#fff")
+  .style("z-index", "10")
+  .style("visibility", "hidden")
+  .text("tooltip");
 
 function ready(error, topo) {
 
+
   let mouseOver = function(d) {
+    
+    
     d3.selectAll(".Country")
       .transition()
       .duration(200)
@@ -37,9 +47,11 @@ function ready(error, topo) {
       .duration(200)
       .style("opacity", 1)
       .style("stroke", "black")
+    return tooltip.style("visibility", "visible").text(d3.select(this).attr("id"));
   }
 
   let mouseLeave = function(d) {
+    
     d3.selectAll(".Country")
       .transition()
       .duration(200)
@@ -48,8 +60,10 @@ function ready(error, topo) {
       .transition()
       .duration(200)
       .style("stroke", "")
+    
+      return tooltip.style("visibility", "hidden")
   }
-console.log("Here")
+//console.log("Here")
   let mouseClick = function(d){
     var country = d3.select(this).attr("id")
     console.log(country)
@@ -69,32 +83,48 @@ console.log("Here")
       )
       // set the color of each country
       .attr("fill", function (d) {
-        d.total = data.get(d.id) || 0;
-        return colorScale(d.total);
+        //console.log(countries)
+        if(countries){
+          if(countries.includes(d.properties["name"])){
+            return colorScale(1500);
+          }
+          else if ( countries.includes("All"))
+            return colorScale(1500);
+          else return colorScale(5)
+        }
+        //console.log(d)
+        //d.total = data.get(d.id) || 0;
+        return colorScale(1500);
       })
       .style("stroke", "transparent")
       .attr("class", function(d){ return "Country" } )
       .style("opacity", .8)
       .on("mouseover", mouseOver )
       .on("mouseleave", mouseLeave )
+      .on("mousemove", function(){return tooltip.style("top",
+      (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");}) 
       .on("click", mouseClick)
+}
+
 }
 
 category = "Families"
 
-function updateDendrogram(category){
+function updateDendrogram(category, hover_allowed = true,filtered_families=[]){
+hover_allowed = true
+if(filtered_families.length > 0) hover_allowed = false;
+console.log(hover_allowed)
 
 d3.json("static/"+ category+".json", function(error, data) {
 
   if (error) {
   throw error;}
-  console.log(data)
   const root = tree(d3.hierarchy(data))
   .sort((a, b) => d3.ascending(a.data.name, b.data.name))
   svg1.selectAll("*").remove()
   path = svg1.append("g")
   .attr("fill", "none")
-  .attr("stroke", "#c0c0c2")
+  .attr("stroke", "#fdd0a2")
   .attr("stroke-opacity", 0.4)
   .attr("stroke-width", 1.5)
 .selectAll("path")
@@ -111,17 +141,17 @@ svg1.append("g")
     rotate(${d.x * 180 / Math.PI - 90})
     translate(${d.y},0)
   `)
-  .attr("fill", d => d.children ? "#555" : "#999")
+  .attr("fill", d => d.children ? "#e6550d" : "#fdae6b")
   .attr("r", 2.5);
 
 svg1.append("g")
   .attr("font-family", "sans-serif")
-  .attr("font-size", 10)
+  .attr("font-size", 8)
   .attr("stroke-linejoin", "round")
   .attr("stroke-width", 3)
-.selectAll("text")
-.data(root.descendants())
-.enter().append("text").attr("class", "graph_path")
+  .selectAll("text")
+  .data(root.descendants())
+  .enter().append("text").attr("font-color", "#fdae6b").attr("class", "graph_path")
   .attr("transform", d => `
     rotate(${d.x * 180 / Math.PI - 90}) 
     translate(${d.y},0) 
@@ -132,185 +162,22 @@ svg1.append("g")
   .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
   .text(d => d.data.name)
   .on("click", clickCategory)
-  .on("mouseover", treehover )
+  .on("mouseover", treehover)
   .on("mouseout", treeleave)
 .clone(true).lower()
   .attr("stroke", "white");
- /* THIS WORKS
-  svg.style("background-color", "black")
-      .style("width", "100%")
-      .style("height", "auto")
-      .style("padding", "10px")
-      .style("box-sizing", "border-box")
-      .style("font", "10px sans-serif");
-  
-  const g = svg.append("g");
+if(hover_allowed == false){
+  d3.selectAll(".graph_path")
+  .transition()
+  .duration(200)
+  .style("opacity", .2)
 
-  const root = tree(d3.hierarchy(data)
-  .sort((a, b) => (a.height - b.height) || a.data.name.localeCompare(b.data.name)));
- 
-    
-  const link = g.append("g")
-      .attr("fill", "none")
-      .attr("stroke", "green")
-      .attr("stroke-opacity", 0.4)
-      .attr("stroke-width", 1.5)
-    .selectAll("path")
-    .data(root.links())
-    .enter().append("path")
-      .attr("d", d3.linkRadial()
-          .angle(d => d.x)
-          .radius(d => d.y));
-
- 
-  
-  const node = g.append("g")
-      .attr("stroke-linejoin", "round")
-      .attr("stroke-width", 3)
-    .selectAll("g")
-    .data(root.descendants().reverse())
-    .enter().append("g")
-      .attr("transform", d => `
-        rotate(${d.x * 180 / Math.PI - 90})
-        translate(${d.y},0)
-      `);
-  
-  node.append("circle")
-      .attr("fill", d => d.children ? "red" : "blue")
-      .attr("r", 2.5);
-  
-  
-  document.body.appendChild(svg.node());
-
-  */
-/*
-  const box = g.node().getBBox();
-
-  svg.remove()
-      .attr("width", box.width)
-      .attr("height", box.height)
-      .attr("viewBox", `${box.x} ${box.y} ${box.width} ${box.height}`);
-
- /* data = d3.hierarchy(data)
-  .sort((a, b) => d3.ascending(a.data.name, b.data.name))
-  const root = tree(data) 
-
-  svg.append("g")
-      .attr("fill", "none")
-      .attr("stroke", "#555")
-      .attr("stroke-opacity", 0.4)
-      .attr("stroke-width", 1.5)
-    .selectAll("path")
-    .data(root.links())
-    .join("path")
-      .attr("d", d3.linkRadial()
-          .angle(d => d.x)
-          .radius(d => d.y));
-  
-  svg.append("g")
-    .selectAll("circle")
-    .data(root.descendants())
-    .join("circle")
-      .attr("transform", d => `
-        rotate(${d.x * 180 / Math.PI - 90})
-        translate(${d.y},0)
-      `)
-      .attr("fill", d => d.children ? "#555" : "#999")
-      .attr("r", 2.5);
-
-  svg.append("g")
-      .attr("font-family", "sans-serif")
-      .attr("font-size", 10)
-      .attr("stroke-linejoin", "round")
-      .attr("stroke-width", 3)
-    .selectAll("text")
-    .data(root.descendants())
-    .join("text")
-      .attr("transform", d => `
-        rotate(${d.x * 180 / Math.PI - 90}) 
-        translate(${d.y},0) 
-        rotate(${d.x >= Math.PI ? 180 : 0})
-      `)
-      .attr("dy", "0.31em")
-      .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
-      .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
-      .text(d => d.data.name)
-    .clone(true).lower()
-      .attr("stroke", "white");
-/*
-  svg.append("g")
-  .attr("fill", "none")
-  .attr("stroke", "#555")
-  .attr("stroke-opacity", 0.4)
-  .attr("stroke-width", 1.5)
-.selectAll("path")
-.data(root.links())
-.join("path")
-  .attr("d", d3.linkRadial()
-      .angle(d => d.x)
-      .radius(d => d.y));
-
-svg.append("g")
-.selectAll("circle")
-.data(root.descendants())
-.join("circle")
-  .attr("transform", d => `
-    rotate(${d.x * 180 / Math.PI - 90})
-    translate(${d.y},0)
-  `)
-  .attr("fill", d => d.children ? "#555" : "#999")
-  .attr("r", 2.5);
-
-svg.append("g")
-  .attr("font-family", "sans-serif")
-  .attr("font-size", 10)
-  .attr("stroke-linejoin", "round")
-  .attr("stroke-width", 3)
-.selectAll("text")
-.data(root.descendants())
-.join("text")
-  .attr("transform", d => `
-    rotate(${d.x * 180 / Math.PI - 90}) 
-    translate(${d.y},0) 
-    rotate(${d.x >= Math.PI ? 180 : 0})
-  `)
-  .attr("dy", "0.31em")
-  .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
-  .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
-  .text(d => d.data.name)
-.clone(true).lower()
-  .attr("stroke", "white");
-  /*
-  var root = tree(stratify(data)
-      .sort(function(a, b) { return (a.height - b.height) || a.id.localeCompare(b.id); }));
-
-  var link = g.selectAll(".link")
-    .data(root.descendants().slice(1))
-    .enter().append("path")
-      .attr("class", "link")
-      .attr("d", function(d) {
-        return "M" + project(d.x, d.y)
-            + "C" + project(d.x, (d.y + d.parent.y) / 2)
-            + " " + project(d.parent.x, (d.y + d.parent.y) / 2)
-            + " " + project(d.parent.x, d.parent.y);
-      });
-
-  var node = g.selectAll(".node")
-    .data(root.descendants())
-    .enter().append("g")
-      .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
-      .attr("transform", function(d) { return "translate(" + project(d.x, d.y) + ")"; });
-
-  node.append("circle")
-      .attr("r", 2.5);
-
-  node.append("text")
-      .attr("dy", ".31em")
-      .attr("x", function(d) { return d.x < 180 === !d.children ? 6 : -6; })
-      .style("text-anchor", function(d) { return d.x < 180 === !d.children ? "start" : "end"; })
-      .attr("transform", function(d) { return "rotate(" + (d.x < 180 ? d.x - 90 : d.x + 90) + ")"; })
-      .text(function(d) { return d.id.substring(d.id.lastIndexOf(".") + 1); });*/
-      
+  svg1.selectAll("text").attr('font-size', 10)
+  d3.selectAll(".graph_path")
+  .transition()
+  .duration(200)
+  .style("opacity", function(d){if(filtered_families.includes(d.data.name)) return 1;})
+}    
 });
 
 }
@@ -318,37 +185,39 @@ svg.append("g")
 currentCategory = ""
 
 let clickCategory = function(){
+  
   var category = d3.select(this).text()
   //console.log(category)
-  if(currentCategory == category || category == "Families"){ updateDendrogram("Families")}
+  if(currentCategory == category || category == "Families"){ 
+    updateDendrogram("Families"); 
+    updateChoropleth();
+  }
   else if(["Africa", "Australia", "North America", "South America", "Eurasia", "Papunesia"].includes(category)){
     currentCategory = category;
 
-      d3.queue()
-  .defer(d3.json, "static/continents/" + category + ".json")
-  .defer(d3.csv, "static/world_population.csv", function(d) { data.set(d.code, +d.pop); })
-  .await(ready);
-  
-
-
-  updateDendrogram(category)
+  updateDendrogram(category, hover_allowed=true);
+  updateChoropleth()
 }
 
   else{
-    $.post("", {'data': 'get_countries', "family":category}, function(data_infunc){
- 
+    updateDendrogram(currentCategory, hover_allowed=true)
+    $.post("", {'data': 'get_info', "family":category}, function(data_infunc){
+      data2 = JSON.parse(data_infunc.data)
+        countries = data2[0]['Countries'].split('|')
+        updateChoropleth(countries)
       });
- 
-  }
+ }
 
 }  
 var transform;
+
 let treehover =  function(){
   d3.selectAll(".graph_path")
   .transition()
   .duration(200)
   .style("opacity", .2)
 
+  svg1.selectAll("text").attr('font-size', 8)
   d3.select(this)
   .transition()
   .duration(200)
@@ -367,7 +236,7 @@ let treeleave = function(){
   .transition()
   .duration(200)
   .style("opacity", 1)
-  .attr("font-size", 10)
+  .attr("font-size", 8)
 }
 
 svg1 = d3.select("#radial_dendrogram")
@@ -376,11 +245,8 @@ height = svg1.attr("height")
 svg1 = svg1.append("g").attr("transform", "translate(" + (width / 2 ) + "," + (height / 2 + 25) + ")");
 
 
-var radius = width/2 - 120
-console.log("radius:" + radius)
-/*var tree = d3.tree()
-.size([2 * Math.PI, radius])
-.separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth)*/
+var radius = width/2 - 170
+
 tree =d3.tree()
 .size([2 * Math.PI, radius])
 .separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth)
@@ -393,65 +259,177 @@ function project(x, y) {
 }
 
 
+function scatterplot(onBrush) {
+  var margin = { top: 10, right: 15, bottom: 40, left: 75 }
+  var width = 600 - margin.left - margin.right
+  var height = 350 - margin.top - margin.bottom
 
-//sunburst
-/*
-var width = 960,
-    height = 700,
-    radius = (Math.min(width, height) / 2) - 10;
+  var x = d3.scaleLinear()
+      .range([0, width])
+  var y = d3.scalePow().exponent(0.25)
+      .range([height, 0])
 
-var formatNumber = d3.format(",d");
+  var xAxis = d3.axisBottom()
+      .scale(x)
+      .tickFormat(d3.format(''))
+  var yAxis = d3.axisLeft()
+      .scale(y)
+      .tickFormat(d3.format(''))
 
-var x = d3.scaleLinear()
-    .range([0, 2 * Math.PI]);
+  var tooltip = d3.select("body")
+    .append("div")
+    .style("position", "absolute")
+    .style("background-color", "#fff")
+    .style("z-index", "10")
+    .style("visibility", "hidden")
+    .text("tooltip");
 
-var y = d3.scaleSqrt()
-    .range([0, radius]);
+  var brush = d3.brush()
+      .extent([[0, 0], [width, height]])
+      .on('start brush', function () {
 
-var color = d3.scaleOrdinal(d3.schemeCategory20);
+          var selection = d3.event.selection
 
-var partition = d3.partition();
+          //console.log(selection)
+          
 
-var arc = d3.arc()
-    .startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x0))); })
-    .endAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x1))); })
-    .innerRadius(function(d) { return Math.max(0, y(d.y0)); })
-    .outerRadius(function(d) { return Math.max(0, y(d.y1)); });
+          var x0 = x.invert(selection[0][0])
+          var x1 = x.invert(selection[1][0])
+          var y0 = y.invert(selection[1][1])
+          var y1 = y.invert(selection[0][1])
+
+          //console.log(x0 + " " + x1 + " "  + y0 + " " + y1)
 
 
-var svg = d3.select("#radial_dendrogram")
-    .attr("width", width)
-    .attr("height", height)
-  .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
-
-d3.json("static/languages.json", function(error, root) {
-  if (error) throw error;
-  root = d3.hierarchy(root); 
-  console.log(partition(root).descendants())
-  root.sum(function(d) { return d.value? 1: 0; });
-  svg.selectAll("path")
-      .data(partition(root).descendants())
-    .enter().append("path")
-      .attr("d", arc)
-      .style("fill", function(d) { val =  color((d.children ? d : d.parent).data.name);  return val; })
-      .on("click", click)
-    .append("title")
-      .text(function(d) { return d.data.name ; });
-});
-
-function click(d) {
-  svg.transition()
-      .duration(750)
-      .tween("scale", function() {
-        var xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
-            yd = d3.interpolate(y.domain(), [d.y0, 1]),
-            yr = d3.interpolate(y.range(), [d.y0 ? 20 : 0, radius]);
-        return function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); };
+          onBrush(x0, x1, y0, y1)
       })
-    .selectAll("path")
-      .attrTween("d", function(d) { return function() { return arc(d); }; });
+
+  var svg2 = d3.select('#scatterplot')
+      .append('svg')
+      .attr('width', width + margin.left + margin.right)
+      .attr('height', height + margin.top + margin.bottom)
+      .append('g')
+      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+
+  
+
+  var bg = svg2.append('g')
+  var gx = svg2.append('g')
+      .attr('class', 'x axis')
+      .attr('transform', 'translate(0,' + height + ')')
+  var gy = svg2.append('g')
+      .attr('class', 'y axis')
+
+  gx.append('text')
+      .attr('x', width)
+      .attr('y', 35)
+      .style('text-anchor', 'end')
+      .style('fill', '#000')
+      .style('font-weight', 'bold')
+      .text('Families')
+
+  gy.append('text')
+      .attr('transform', 'rotate(-90)')
+      .attr('x', 0)
+      .attr('y', -40)
+      .style('text-anchor', 'end')
+      .style('fill', '#000')
+      .style('font-weight', 'bold')
+      .text('Number of children languages')
+
+  svg2.append('g')
+      .attr('class', 'brush')
+      .call(brush)
+
+  return function update(data) {
+    var colorScale = d3.scaleThreshold()
+.domain([0,10, 100,500, 1000, 1600])
+  .range(d3.schemeOranges[6]);
+
+  console.log(d3.schemeOranges[6])
+  
+      x.domain(d3.extent(data, function (d) {  return d.index })).nice()
+      y.domain(d3.extent(data, function (d) { return d.child_language_countName })).nice()
+
+      gx.call(xAxis)
+      gy.call(yAxis)
+
+      var bgRect = bg.selectAll('rect')
+          .data(d3.pairs(d3.merge([[y.domain()[0]], colorScale.domain(), [y.domain()[1]]])))
+      bgRect.exit().remove()
+      bgRect.enter().append('rect')
+          .attr('x', 0)
+          .attr('width', width)
+          .merge(bgRect)
+          .attr('y', function (d) { return y(d[1]) })
+          .attr('height', function (d) { return y(d[0]) - y(d[1]) })
+          .style('fill', function (d) { return colorScale(d[0]) })
+
+      var circle = svg2.selectAll('circle')
+          .data(data, function (d) { return d.name })
+      circle.exit().remove()
+      circle.enter().append('circle')
+          .attr('r', 4)
+          .style('stroke', '#fff')
+          .merge(circle)
+          .attr('cx', function (d) { return x(d.index) })
+          .attr('cy', function (d) { return y(d.child_language_countName) })
+          .style('fill', "#a63603")//function (d) { return colorScale(d.child_language_countName) })
+          .style('opacity', function (d) { return d.filtered ? 0.2 : 1 })
+          .style('stroke-width', '1px')//function (d) { return d.filtered ? 1 : 2 })
+        .on("mouseover", function(d){return tooltip.style("visibility", "visible").text(d['Name']+ ", " +d.index + ", "+d.child_language_countName);})
+      .on("mousemove", function(){return tooltip.style("top",
+          (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
+      .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+  }
 }
 
-d3.select(self.frameElement).style("height", height + "px");
-*/
+
+
+
+//scatterplot()
+updateChoropleth()
+initialize(data)
+
+function initialize(results) {
+
+  var components = [
+      //choropleth(features),
+      scatterplot(onBrush)
+  ]
+
+  function update() {
+       components.forEach(function (component) { component(data) })
+  }
+
+
+  function onBrush(x0, x1, y0, y1) {
+      filtered_families = []
+      var clear = x0 === x1 || y0 === y1
+      data.forEach(function (d) {
+          d.filtered = clear ? false : !(d.index < x0 || d.index > x1 || d.child_language_countName < y0 || d.child_language_countName > y1)
+          if(d.filtered){
+            filtered_families.push(d['Name'])
+          }
+      })
+      
+
+      
+      update()
+
+      countries = []
+      if(clear) updateChoropleth();
+      for(i =0; i <filtered_families.length; i++){
+        $.post("", {'data': 'get_info', "family":filtered_families[i]}, function(data_infunc){
+          data2 = JSON.parse(data_infunc.data)
+            countrie = data2[0]['Countries'].split('|')
+            countries = countries.concat(countrie)
+            updateChoropleth(countries)
+          });
+  
+      }
+
+  }
+
+  update()
+}

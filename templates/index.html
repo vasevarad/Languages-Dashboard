@@ -1,312 +1,57 @@
-<!--<!DOCTYPE html>
-<meta charset="utf-8">
-<style> /* set the CSS */
-
-body { font: 12px Arial;}
-
-path {
-    stroke: steelblue;
-    stroke-width: 2;
-    fill: none;
-}
-
-.axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-
-</style>
-<body>
-
-<div id="option">
-    <input name="updateButton" type="button" value="Update" onclick="updateData()" />
-</div>
-
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-var data= {{data.chart_data|safe}}
-console.log(data);
-</script>
-<script src="{{url_for('static', filename='index.js')}}"></script>
-</body>
-</html>
-
--->
-
-<!--
-<!DOCTYPE html>
-<meta charset="utf-8">
-<title>Google Maps + D3 Overlay</title>
-<style>
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #002732;
-}
-</style>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<body>
-<div id="map" style="width: 960px; height: 500px;"></div>
-<script>
-window.initMap = function() {
-  var el = document.querySelector('#map');
-  var google = window.google;
-
-  // http://www.colourlovers.com/palette/937624/Dance_To_Forget
-  var colors = ['#FF4E50','#FC913A','#F9D423','#EDE574','#E1F5C4','#FF4E50','#FC913A','#F9D423'];
-
-  function SVGOverlay (map) {
-    this.map = map;
-    this.svg = null;
-    this.coords = [];
-
-    this.onPan = this.onPan.bind(this);
-
-    this.setMap(map);
-  }
-
-  SVGOverlay.prototype = new google.maps.OverlayView();
-
-  SVGOverlay.prototype.onAdd = function () {
-    this.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    this.svg.style.position = 'absolute';
-    this.svg.style.top = 0;
-    this.svg.style.left = 0;
-    this.svg.style.width = '960px';
-    this.svg.style.height = '500px';
-    this.svg.style.pointerEvents = 'none';
-
-    var bounds = this.map.getBounds(),
-        center = bounds.getCenter(),
-        ne = bounds.getNorthEast(),
-        sw = bounds.getSouthWest();
-    for (var i = 0; i < 40; i++) {
-      this.coords.push({
-        id: i,
-        color: colors[i % colors.length],
-        latLng: new google.maps.LatLng(
-          center.lat() + (Math.random() - 0.5) * Math.abs(ne.lat() - sw.lat()),
-          center.lng() + (Math.random() - 0.5) * Math.abs(ne.lng() - sw.lng())
-        )
-      });
-    }
-
-    var proj = this.getProjection();
-
-    d3.select(this.svg)
-        .attr('width', 960)
-        .attr('height', 500)
-      .append('g')
-        .attr('class', 'coords')
-        .selectAll('circle')
-        .data(this.coords, (d) => d.id)
-        .enter().append('circle')
-          .attr('cx', (d) => proj.fromLatLngToContainerPixel(d.latLng).x)
-          .attr('cy', (d) => proj.fromLatLngToContainerPixel(d.latLng).y)
-          .attr('r', 5)
-          .attr('fill', (d) => d.color);
-
-    this.onPan();
-    document.body.appendChild(this.svg);
-    this.map.addListener('center_changed', this.onPan);
-  };
-
-  SVGOverlay.prototype.onPan = function () {
-    var proj = this.getProjection();
-    d3.select(this.svg)
-      .select('.coords')
-      .selectAll('circle')
-      .data(this.coords)
-        .attr('cx', (d) => proj.fromLatLngToContainerPixel(d.latLng).x)
-        .attr('cy', (d) => proj.fromLatLngToContainerPixel(d.latLng).y);
-  };
-
-  SVGOverlay.prototype.onRemove = function () {
-    this.map.removeListener('center_changed', this.onPan);
-    this.svg.parentNode.removeChild(this.svg);
-    this.svg = null;
-  };
-
-  SVGOverlay.prototype.draw = function () {
-    console.log('draw');
-  };
-
-  var map = new google.maps.Map(el, {
-    center: new google.maps.LatLng(-34.397, 150.644),
-    zoom: 8,
-    disableDefaultUI: true,
-    backgroundColor: '#002732'
-  });
-
-  fetch('/static/map-styles.json')
-    .then((response) => response.json())
-    .then(function (styles) {
-      map.mapTypes.set('neutral-blue', new google.maps.StyledMapType(styles));
-      map.setMapTypeId('neutral-blue');
-    });
-
-  var overlay = new SVGOverlay(map);
-
-};
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3&amp;libraries=places&amp;key=AIzaSyDaoLdV31Y5ls8ABBpuAQt9t8RzMDfOMiM&amp;callback=initMap"></script>
-</body>
--->
-<!--
-<!DOCTYPE html>
-<meta charset="utf-8">
-<head>
-<h1>Languages Dashboard</h1>
-<style>svg{width:100%;height:500px;margin:10px auto;}</style>
-</head>
-<body>
-<script src="https://unpkg.com/d3@4"></script>
-<script src="https://unpkg.com/topojson-client@3"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3-tile"></script>
-<script>
-/*
-
-
-
-
-map = {
-  const svg = d3.create("svg")
-      .attr("viewBox", [0, 0, width, height]);
-
-  const projection = d3.geoMercator()
-      .scale(1 / (2 * Math.PI))
-      .translate([0, 0]);
-
-  const render = d3.geoPath(projection);
-
-  const tile = d3.tile()
-      .extent([[0, 0], [width, height]])
-      .tileSize(512);
-
-  const zoom = d3.zoom()
-      .scaleExtent([1 << 10, 1 << 15])
-      .extent([[0, 0], [width, height]])
-      .on("zoom", () => zoomed(d3.event.transform));
-
-  let image = svg.append("g")
-      .attr("pointer-events", "none")
-    .selectAll("image");
-
-  const path = svg.append("path")
-      .attr("pointer-events", "none")
-      .attr("fill", "none")
-      .attr("stroke", "red")
-      .attr("stroke-linecap", "round")
-      .attr("stroke-linejoin", "round");
-
-  svg
-      .call(zoom)
-      .call(zoom.transform, d3.zoomIdentity
-          .translate(width / 2, height / 2)
-          .scale(-initialScale)
-          .translate(...projection(initialCenter))
-          .scale(-1));
-
-  function zoomed(transform) {
-    const tiles = tile(transform);
-
-    image = image.data(tiles, d => d).join("image")
-        .attr("xlink:href", d => url(...d))
-        .attr("x", ([x]) => (x + tiles.translate[0]) * tiles.scale)
-        .attr("y", ([, y]) => (y + tiles.translate[1]) * tiles.scale)
-        .attr("width", tiles.scale)
-        .attr("height", tiles.scale);
-
-    projection
-        .scale(transform.k / (2 * Math.PI))
-        .translate([transform.x, transform.y]);
-
-    path.attr("d", render(feature));
-  }
-
-  return svg.node();
-}
-
-url = (x, y, z) => `https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/${z}/${x}/${y}${devicePixelRatio > 1 ? "@2x" : ""}?access_token=pk.eyJ1IjoibWJvc3RvY2siLCJhIjoiY2s5ZWRlbTM4MDE0eDNocWJ2aXR2amNmeiJ9.LEyjnNDr_BrxRmI4UDyJAQ`
-
-height = 600
-
-initialCenter = [-98 - 35 / 60, 39 + 50 / 60]
-
-initialScale = 1 << 12
-
-feature = d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json").then(topology => topojson.feature(topology, topology.objects.states))
-
-topojson = require("topojson-client@3")
-
-d3 = require("d3@5", "d3-tile@1")*/
-</script>
-</body>
--->
-
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
   <style>
-    .flex-container {
-  display: flex;
-  flex-direction: column;
-  background-color: DodgerBlue;
+body {
+  margin: 40px;
 }
-.flex-container > div {
-  background-color: #f1f1f1;
-  width: 100px;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 700px 700px;
+  grid-gap: 10px;
+  background-color: #ffffe6
+;
+  
+}
+
+.box {
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
 }
   </style>
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <h1>Where's your language?</h1>
-    <p>Languages Dashboard</p> 
-  </div>
 
-</head>
+
+
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+</head>
+<body> 
 
-<!-- Create an element where the map will take place -->
+<div class="wrapper">
+  <div class="box a"><svg id="radial_dendrogram" width="900" height="800" style="margin-left:-50px"></svg></div>
+  <div class="box b" id ="scatterplot" style="margin-top:150px; margin-left:-200px"></div>
+  <div class="box c"><svg id="my_dataviz" width="1000" height="300" style="margin-top:100px; margin-left:0px"></svg></div>
+  <div class="box d"><h1 style="text-align:center; line-height:500px; color:#000; margin-left:-250px">Find your Language!</h1>
+  <!--<img src="static/findyourlanguage.png" width="500" height="300" style=" margin-left:-150px; margin-top:100px">-->
 
-<!--<div class="container" style="margin-top:30px">
---> <div class="row">
-  <!-- <div class="col-lg-8" style="margin-left:-300px">-->
-      <svg id="radial_dendrogram" width="900" height="1000"></svg>
-      
-<!--
-      </div>
-    <div class="col-lg-8">-->
-      <svg id="my_dataviz" width="600" height="300" style="margin-top:100px"></svg>
-    </div>
-
-    <!--<div class="container" style="margin-top:30px">
---> <div class="row">
-  <div class="col-lg-8" style="text-align:right">
-    <h2>Hello</h2>
-    <p>This is Vasudha</p>
-        </div></div>
-<!--
-</div>
+  </div>
 
 </div>
-</div>
--->
+
+
+<script>var data = {{ data.chart_data | safe }}</script>
   <script src="{{
   url_for('static', filename='index.js') }}"></script>
 
+</body>
